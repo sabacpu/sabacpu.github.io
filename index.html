@@ -6,6 +6,32 @@
     <title>MAKE YOUR JAPAN TRAVEL EASY</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="images/logo.png" />
+    <script>
+        
+        window.onload = function () {
+            alert("Welcome to your Japan Travel Guide!");
+        };
+
+    
+        function suggestDestination() {
+            const season = document.getElementById("seasonInput").value.toLowerCase();
+            let suggestion = "";
+
+            if (season === "winter") {
+                suggestion = "Try Hokkaido for snow festivals and skiing!";
+            } else if (season === "spring") {
+                suggestion = "Visit Kyoto for cherry blossoms!";
+            } else if (season === "summer") {
+                suggestion = "Okinawa is perfect for summer beaches!";
+            } else if (season === "autumn") {
+                suggestion = "Explore Nikko’s fall foliage!";
+            } else {
+                suggestion = "Please enter a valid season (Winter, Spring, Summer, Autumn).";
+            }
+
+            document.getElementById("destinationOutput").innerText = suggestion;
+        }
+    </script>
 </head>
 <body>
     <section class="header">
@@ -13,10 +39,10 @@
             <a href="index.html"><img src="images/logo.png" alt="Logo" /></a>
             <div class="nav-links">
                 <ul>
-                    <li><a href="#">HOME</a></li>
-                    <li><a href="#">ABOUT</a></li>
-                    <li><a href="#">BLOG</a></li>
-                    <li><a href="#">CONTACT</a></li>
+                    <a href="index.html"><img src="images/home.png" alt="Home" width="50"></a>
+                    <a href="about.html"><img src="images/about.png" alt="About" width="50"></a>
+                    <a href="blog.html"><img src="images/blog.png" alt="Blog" width="50"></a>
+                    <a href="contact.html"><img src="images/contact.png" alt="Contact" width="50"></a>
                 </ul>
             </div>
         </nav>
@@ -29,6 +55,19 @@
             </p>
             <a href="#" class="hero-btn">Visit us to know more about Japan travels</a>
         </div>
-    </section>
+
+       
+        <div class="custom-js-box">
+            <h3>Not sure where to go? Tell us your favorite season:</h3>
+            <input type="text" id="seasonInput" placeholder="e.g. Spring" />
+            <button onclick="suggestDestination()">Suggest Destination</button>
+            <p id="destinationOutput"></p>
+        </div>
+
+
+    <footer>
+        <p>Student ID: 22229556 | Name: MATIN SABA</p>
+    </footer>
 </body>
 </html>
+
